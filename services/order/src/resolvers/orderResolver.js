@@ -1,20 +1,8 @@
 import { OrderModel } from '../models/order';
+import { addOrder } from '../repository/orderRepo';
 
-const createOrder = () => {
-    console.log('order input ', input.name);
-    const orderByName = new OrderModel({
-        name: input.name,
-    });
-
-    try {
-        const doc = await orderByName.save();
-        console.log(doc);
-    } catch (error) {
-        console.log(error);
-        return error;
-    }
-
-    return orderByName;
+const createOrder = (OrderData) => {
+   return addOrder(OrderData)
 };
 
 export {createOrder}
