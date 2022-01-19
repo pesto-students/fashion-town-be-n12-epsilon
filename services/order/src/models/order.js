@@ -19,7 +19,7 @@ const ItemSchema = new Mongoose.Schema({
   },
   size:{
     type: String,
-    required: true
+    required: false
   },
   qty:{
     type: Number,
@@ -40,7 +40,7 @@ const OrderSchema = new Mongoose.Schema({
     type: String,
     required: true
   },
-  Items: {
+  items: {
     type: [ItemSchema],
     required: true
   },
@@ -55,8 +55,11 @@ const OrderSchema = new Mongoose.Schema({
   paymentDetails:{
     type: String,
     required: true
-  }
-  
+  },
+  createDate: {
+    type: Date,
+    default: Date.now,
+}
 })
 
 export const OrderModel =  Mongoose.model('Order', OrderSchema)

@@ -1,12 +1,15 @@
-import { createOrder } from './orderResolver';
+import { createOrder, getOrderHistory } from './orderResolver';
 import { razorPayOrder } from './createRazorPayOrderResolver';
 
-//Define resolvers
-
 export default {
+    Query: {
+        getOrderHistory: async (parents, { orderByEmailId }) => {
+            return getOrderHistory(orderByEmailId);
+        },
+    },
     Mutation: {
         createOrder: async (parent, { input }) => {
-            return createOrder(input)
+            return createOrder(input);
         },
         createRazorPayOrder: async (parent, { input }) => {
             return razorPayOrder(input);

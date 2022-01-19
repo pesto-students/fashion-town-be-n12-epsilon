@@ -1,19 +1,19 @@
 import { gql } from 'apollo-server';
-import razorPay from './razorPay';
-import order from './order';
+import RazorPay from './razorPay';
+import Order from './order';
 import Item from './item';
 
 export default gql`
-    ${razorPay}
-    ${order}
+    ${RazorPay}
+    ${Order}
     ${Item}
 
     type Query {
-        order(name: String): Order
+        getOrderHistory(orderByEmailId: String): [Order]
     }
 
     type Mutation {
         createOrder(input: OrderInput): Order
-        createRazorPayOrder(input: razorPayOrderInput): razorPayOrder
+        createRazorPayOrder(input: RazorPayOrderInput): RazorPayOrder
     }
 `;

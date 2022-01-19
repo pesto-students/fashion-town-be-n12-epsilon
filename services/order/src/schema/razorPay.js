@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 export default gql`
-    type razorPayOrder {
+    type RazorPayOrder {
         id: String
         entity: String
         amount: Int
@@ -10,7 +10,7 @@ export default gql`
         receipt: String
         status: String
     }
-    input razorPayOrderInput {
+    input RazorPayOrderInput {
         amount: Int
         orderId: String
     }

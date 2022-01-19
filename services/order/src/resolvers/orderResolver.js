@@ -1,8 +1,12 @@
-import { OrderModel } from '../models/order';
-import { addOrder } from '../repository/orderRepo';
+import { addOrder, getOrderListByEmailId } from '../repository/orderRepo';
+import { emailService } from '../emailService/emailService';
 
-const createOrder = (OrderData) => {
-   return addOrder(OrderData)
+
+export const createOrder = (orderData) => {
+    emailService(orderData)
+   return addOrder(orderData)
 };
 
-export {createOrder}
+export const getOrderHistory = (orderByEmailId) =>{
+    return getOrderListByEmailId(orderByEmailId)
+}
