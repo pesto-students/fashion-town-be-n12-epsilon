@@ -56,8 +56,8 @@ const OrderSchema = new Mongoose.Schema({
     type: String,
     required: true
   },
-  createDate: {
-    type: Date,
+  createdOn: {
+    type: String,
     default: Date.now,
 }
 })

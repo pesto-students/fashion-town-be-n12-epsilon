@@ -15,5 +15,6 @@ export default gql`
         totalPrice: Int
         address: String
         paymentDetails: String
+        createdOn: String
     }
 `;
