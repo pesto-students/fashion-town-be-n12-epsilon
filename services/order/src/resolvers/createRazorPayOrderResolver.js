@@ -1,11 +1,12 @@
 import Razorpay from 'razorpay';
+import 'dotenv/config';
 
 const createOrder = async (amount, orderId) => {
     return new Promise((resolve, reject) => {
         try {
             var instance = new Razorpay({
-                key_id: 'rzp_test_QufTPfjwjSmSGC',
-                key_secret: 'JmM6KIi0HQ5oF06sNqSzvbIH',
+                key_id: process.env.RAZOR_PAY_KEY,
+                key_secret: process.env.RAZOR_PAY_SECRET,
             });
             var options = {
                 amount: amount, // amount in the smallest currency unit
