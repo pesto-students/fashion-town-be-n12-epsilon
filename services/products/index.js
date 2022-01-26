@@ -8,7 +8,12 @@ import typeDefs from "./schema";
 const { PORT = 5001 } = process.env;
 
 async function initServer() {
-  await dbConnect();
+  try {
+    await dbConnect();
+  } catch (error) {
+    console.log(error)
+  }
+  
   const server = new ApolloServer({
     schema: buildFederatedSchema([{ typeDefs, resolvers }]),
   });

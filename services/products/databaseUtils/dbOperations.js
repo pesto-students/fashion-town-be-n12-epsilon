@@ -44,4 +44,19 @@ const updateData = async (where, set) => {
   });
 };
 
-export {insertData, findData, updateData}
+const SearchData = async (pipeline) => {
+  try {
+    console.log(pipeline)
+    const cursor = await col.aggregate(pipeline);
+    const searchResult = [];
+    await cursor.forEach((product) => {
+      searchResult.push(product)
+    });
+    console.log(searchResult.length)
+    return searchResult;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { insertData, findData, updateData, SearchData };
