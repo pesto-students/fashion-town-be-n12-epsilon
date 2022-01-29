@@ -6,7 +6,7 @@
   "scripts": {
     "start-service-products": "babel-node services/products/index.js",
     "start-service-order": "babel-node services/order/index.js",
-    "start-service-api-gateway": "babel-node gateway.js",
+    "start": "babel-node gateway.js",
     "start-services": "concurrently \"npm:start-service-*\""
   },
   "devDependencies": {
