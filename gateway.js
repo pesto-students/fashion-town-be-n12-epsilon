@@ -11,11 +11,11 @@ const { PORT = 4000 } = process.env;
       serviceList: [
         {
           name: "products",
-          url: "https://fahion-town-order-service.herokuapp.com/",
+          url: "https://fashion-town-products-service.herokuapp.com/",
         },
         {
           name: "order",
-          url: "https://fashion-town-products-service.herokuapp.com/",
+          url: "https://fahion-town-order-service.herokuapp.com/",
         },
       ],
     });
