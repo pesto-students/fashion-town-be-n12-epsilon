@@ -9,8 +9,14 @@ const { PORT = 4000 } = process.env;
     // user and wallets api
     const gateway = new ApolloGateway({
       serviceList: [
-        { name: 'products', url: 'http://localhost:5001' },
-        { name: 'order', url: 'http://localhost:5002' }
+        {
+          name: "products",
+          url: "https://fahion-town-order-service.herokuapp.com/",
+        },
+        {
+          name: "order",
+          url: "https://fashion-town-products-service.herokuapp.com/",
+        },
       ],
     });
   
