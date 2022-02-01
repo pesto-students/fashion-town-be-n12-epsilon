@@ -17,13 +17,18 @@ const insertData = async (operation, data) => {
   });
 };
 
-const findData = async (filter = {}) => {
+const findData = async (filter = {}, limit = 0, offset = 0) => {
   return new Promise(async (resolve, rejects) => {
     try {
-      col.find(filter).toArray(function (err, result) {
-        if (err) throw err;
-        resolve(result);
-      });
+      const totalCount = await col.find(filter).count();
+      col
+        .find(filter)
+        .skip(offset)
+        .limit(limit)
+        .toArray(function (err, products) {
+          if (err) throw err;
+          resolve({ products, totalCount });
+        });
     } catch (error) {
       rejects(error);
     }
@@ -46,17 +51,30 @@ const updateData = async (where, set) => {
 
 const SearchData = async (pipeline) => {
   try {
-    console.log(pipeline)
+    console.log(pipeline);
     const cursor = await col.aggregate(pipeline);
     const searchResult = [];
     await cursor.forEach((product) => {
-      searchResult.push(product)
+      searchResult.push(product);
     });
-    console.log(searchResult.length)
+    console.log(searchResult.length);
     return searchResult;
   } catch (error) {
     console.log(error);
   }
 };
 
-export { insertData, findData, updateData, SearchData };
+const findDataOrderBy = async (orderBy, limit) => {
+  return new Promise(async (resolve, rejects) => {
+    try {
+      const result = await col.find().sort({[orderBy]: -1}).limit(limit);
+      result.toArray((error, products) => {
+        resolve(products);
+      });
+    } catch (error) {
+      rejects(error);
+    }
+  });
+};
+
+export { insertData, findData, updateData, SearchData, findDataOrderBy };
