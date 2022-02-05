@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-const uri = "mongodb+srv://admin:admin123@cluster0.a9zwe.mongodb.net/fashion_town";
+const uri = "mongodb+srv://admin:admin123@cluster0.a9zwe.mongodb.net/test";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const dbConnect = () => {
     return new Promise(async(resolve, reject) => {
