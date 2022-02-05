@@ -1,4 +1,4 @@
-import { SearchData } from "../../databaseUtils/dbOperations";
+import { SearchData } from "../databaseUtils/dbOperations";
 
 const getPipeline = (searchInput) => {
   console.log(searchInput);

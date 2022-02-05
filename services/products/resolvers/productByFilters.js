@@ -1,4 +1,4 @@
-import { findData } from "../../databaseUtils/dbOperations";
+import { findData } from "../databaseUtils/dbOperations";
 
 const injectInOperator = (filters) => {
   for (const [key, value] of Object.entries(filters)) {
