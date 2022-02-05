@@ -1,7 +1,8 @@
 import Mongoose from 'mongoose';
+import config from '../config';
 
-const server = 'mongodb+srv://admin:admin123@cluster0.a9zwe.mongodb.net'; // REPLACE WITH YOUR DB SERVER
-const database = 'fashion_town'; // REPLACE WITH YOUR DB NAME
+const server = config.dbUri// REPLACE WITH YOUR DB SERVER
+const database = config.dbName; // REPLACE WITH YOUR DB NAME
 
 const dbConnect = () => {
     return new Promise(async (resolve, reject) => {
