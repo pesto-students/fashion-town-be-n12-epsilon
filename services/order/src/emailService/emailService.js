@@ -6,7 +6,7 @@ const emailService = async (orderData) => {
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
     const emailBody = generateEmailHtml(orderData);
-    
+    console.log("order data",orderData);
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         service: 'hotmail',
