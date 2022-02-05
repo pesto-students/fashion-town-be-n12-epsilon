@@ -34,7 +34,7 @@ This application is based on microservice architecture and the services are as f
 
 **Method 2**
 
-1. cd services/<service>
+1. cd services/service-name
 2. **npm install && npm start**
 3. Once the above services have stared successfully, add these service URL in service array in gateway.js file.
 4. Go to root directory (where gateway.js is present) run **npm install && npm start** to start API gateway
