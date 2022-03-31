@@ -43,6 +43,7 @@ This application is based on microservice architecture and the services are as f
 1. Product service
 2. Order service
 3. graphQL API gateway service: All request are routed via this gateway
+
 # Author
 1. Vikram
 # License
