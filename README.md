@@ -10,7 +10,7 @@ The Fashion Town is an online one-stop shop for all fashion and lifestyle needs.
 2. [Installation](#installation)
 3. [Technology Stack and Architecture](#technology-stack-and-architecture)
 4. [Author](#author)
-4. [License](#license)
+5. [License](#license)
 
 # Demo
 
