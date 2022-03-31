@@ -7,21 +7,15 @@ The Fashion Town is an online one-stop shop for all fashion and lifestyle needs.
 # Table of Contents
 
 1. [Demo](#demo)
-2. [Technology Stack and Architecture](#technology-stack-and-architecture)
-3. [Installation](#installation)
+2. [Installation](#installation)
+3. [Technology Stack and Architecture](#technology-stack-and-architecture)
+4. [Author](#author)
 4. [License](#license)
 
 # Demo
 
 [Live Demo](https://fashion-town.netlify.app/)
 
-# Technology Stack and Architecture
-
-This application is based on microservice architecture and the services are as follows:
-
-1. Product service
-2. Order service
-3. graphQL API gateway service: All request are routed via this gateway
 
 # Installation
 
@@ -41,6 +35,16 @@ This application is based on microservice architecture and the services are as f
 
 **Note** API gateway will crash if the product and order services are not running.
 
+
+# Technology Stack and Architecture
+
+This application is based on microservice architecture and the services are as follows:
+
+1. Product service
+2. Order service
+3. graphQL API gateway service: All request are routed via this gateway
+# Author
+1. Vikram
 # License
 
 MIT
